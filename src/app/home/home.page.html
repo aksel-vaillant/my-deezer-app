@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let dataArtist of listArtist" (onclick)="goToListAlbum({{dataArtist.id}})">
+  <ion-card *ngFor="let dataArtist of listArtist" (click)="goToListAlbum(dataArtist.id)">
 
       <img src={{dataArtist.picture_medium}}>
 
@@ -23,6 +23,7 @@
 
       <ion-card-content>
         {{dataArtist.nb_fan+  " fans"}}
+        {{dataArtist.nb_album+  " albums"}}
       </ion-card-content>
       
     </ion-card>

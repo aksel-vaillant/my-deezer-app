@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Titre</ion-title>
+  </ion-toolbar>
+
+  <script src="list-track-player.js"></script>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let dataTrack of listTrack">
+     <ion-card-header>
+       <ion-card-title>{{dataTrack.title}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <audio controls>
+          <source src={{dataTrack.preview}} type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+      </ion-card-content>
+ </ion-card>
+</ion-content>
+

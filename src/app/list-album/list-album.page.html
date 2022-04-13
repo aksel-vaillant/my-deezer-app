@@ -3,10 +3,20 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>List Album</ion-title>
+    <ion-title>Album</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
 
+  <ion-card *ngFor="let dataAlbum of listAlbum" (click)="goToListTracks(dataAlbum.id)">
+     <ion-card-content>
+        <ion-img src={{dataAlbum.cover}}></ion-img>
+      </ion-card-content>
+      <ion-card-header>
+        <ion-card-title>{{dataAlbum.title}}</ion-card-title>
+        <ion-card-subtitle>{{dataAlbum.fans}} fans</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  
 </ion-content>
